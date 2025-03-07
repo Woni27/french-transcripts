@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法语哲学读本</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📖 法语哲学读本</h1>
+        <a href="index.html">⬅ Retour</a>
+    </header>
+    <div class="content">
+        <h2>Titre de la transcription</h2>
+        <audio controls>
+            <source src="audio/philosophy1.mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'audio.
+        </audio>
+        <p id="transcript"></p>
+    </div>
+    <script>
+        fetch("transcripts/philosophy1.txt")
+            .then(response => response.text())
+            .then(text => document.getElementById("transcript").textContent = text);
+    </script>
+</body>
+</html>
